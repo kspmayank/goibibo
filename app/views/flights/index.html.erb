@@ -1,0 +1,19 @@
+<h1>Search For Flights:</h1>
+<%= form_for :flights, url: 'search', method: :post  do |f| %>
+  Source : <%= f.select "Source", options_from_collection_for_select(@city, :id, :name), prompt: "New Delhi", class: 'homedropdown col-md-3', id: 'city_source' %><br>
+  Destination : <%= f.select "Destination", options_from_collection_for_select(@city, :id, :name), prompt: "Mumbai", class: 'homedropdown col-md-3', id: 'city_destination' %> <br>
+  Departure Date : <%= f.date_select "Date" %><br>
+  Seating Class : <%= f.select "Class", "<option>E</option><option>B</option>", prompt: "E"%><br>
+  Adults : <%= f.select "Class", "<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>".html_safe, prompt: "1"%><br>
+  Children : <%= f.select "Class", "<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>".html_safe, prompt: "0"%><br>
+  Infants : <%= f.select "Class", "<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>".html_safe, prompt: "0"%><br>  
+  <%= f.submit value: 'Search' %>
+<% end %>
+
+<!-- source
+destination
+dateofdeparture
+seatingclass
+adults
+children
+infants -->
